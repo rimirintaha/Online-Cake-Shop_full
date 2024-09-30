@@ -20,8 +20,6 @@ $pname = "";
 $price = "";
 $piece="";
 $available = "";
-$category = "";
-$type = "";
 $item = "";
 $pCode = "";
 $descri = "";
@@ -53,7 +51,6 @@ if (((@$_FILES['profilepic']['type']=='image/jpeg') || (@$_FILES['profilepic']['
 		mkdir("../image/product/$item");
 	}
 	
-	
 	$filename = strtotime(date('Y-m-d H:i:s')).$file_ext;
 
 	if (file_exists("../image/product/$item/".$filename)) {
@@ -61,13 +58,12 @@ if (((@$_FILES['profilepic']['type']=='image/jpeg') || (@$_FILES['profilepic']['
 	}else {
 		if(move_uploaded_file(@$_FILES["profilepic"]["tmp_name"], "../image/product/$item/".$filename)){
 			$photos = $filename;
-			$result = mysqli_query($con, "INSERT INTO products (pName,price,piece,description,available,category,type,item,pCode,picture) VALUES ('$_POST[pname]','$_POST[price]','$_POST[piece]','$_POST[descri]','$_POST[available]','$_POST[category]','$_POST[type]','$_POST[item]','$_POST[code]','$photos')");
+			$result = mysqli_query($con, "INSERT INTO products (pName,price,piece,description,available,item,pCode,picture) VALUES ('$_POST[pname]','$_POST[price]','$_POST[piece]','$_POST[descri]','$_POST[available]','$_POST[item]','$_POST[code]','$photos')");
 				header("Location: allproducts.php");
 		}else {
 			echo "Something Worng on upload!!!";
 		}
 		//echo "Uploaded and stored in: userdata/profile_pics/$item/".@$_FILES["profilepic"]["name"];
-		
 		
 	}
 	}

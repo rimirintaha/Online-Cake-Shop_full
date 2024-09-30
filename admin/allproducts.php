@@ -75,8 +75,6 @@ $search_value = "";
 					<th>Price</th>
 					<th>Piece</th>
 					<th>Available</th>
-					<th>Category</th>
-					<th>Type</th>
 					<th>Item</th>
 					<th>P Code</th>
 					<th>Edit</th>
@@ -92,8 +90,6 @@ $search_value = "";
 						$price = $row['price'];
 						$piece=$row['piece'];
 						$available = $row['available'];
-						$category = $row['category'];
-						$type = $row['type'];
 						$item = $row['item'];
 						$pCode = $row['pCode'];
 						$picture = $row['picture'];
@@ -105,8 +101,6 @@ $search_value = "";
 					<th><?php echo $price; ?></th>
 					<th><?php echo $piece; ?></th>
 					<th><?php echo $available; ?></th>
-					<th><?php echo $category; ?></th>
-					<th><?php echo $type; ?></th>
 					<th><?php echo $item; ?></th>
 					<th><?php echo $pCode; ?></th>
 					<th><?php echo '<div class="home-prodlist-img"><a href="editproduct.php?epid='.$id.'">

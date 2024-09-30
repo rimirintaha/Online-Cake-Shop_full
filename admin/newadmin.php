@@ -84,7 +84,9 @@ $_POST['last_name'] = trim($_POST['last_name']);
 						Signup email: ".$_POST['email']."
 						
 						";
-						//if (@mail($_POST['email'],"eBuyBD Activation Code",$msg, "From:eBuyBD <no-reply@ebuybd.xyz>")) {
+						$subject = "Activation code";
+							$form = "From: rubelduet124019@gmail.com";
+							if (mail($_POST['email'], $subject, $msg, $form)) {
 							
 						$result = mysqli_query($con, "INSERT INTO admin (firstName,lastName,email,mobile,address,password,type,confirmCode) VALUES ('$_POST[first_name]','$_POST[last_name]','$_POST[email]','$_POST[mobile]','$_POST[signupaddress]','$_POST[password]','$_POST[admintype]','$confirmCode')");
 						
@@ -96,9 +98,9 @@ $_POST['last_name'] = trim($_POST['last_name']);
 							Email: '.$u_email.'<br>
 							Account Successfully Created. <br>
 						</font></div></div>';
-						//}else {
-						//	throw new Exception('Email is not valid!');
-						//}
+						}else {
+						throw new Exception('Email is not valid!');
+						}
 						
 						
 					}else {
