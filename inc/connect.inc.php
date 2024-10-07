@@ -1,3 +1,3 @@
 <?php 
-	$con = mysqli_connect("localhost","root","", "rimi");
+	$con = mysqli_connect("localhost","root","", "Cake shop");
 ?>

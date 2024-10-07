@@ -33,8 +33,8 @@ $getposts = mysqli_query($con, "SELECT * FROM products WHERE id ='$epid'") or di
 		$item = $row['item'];
 		$itemu = ucwords($row['item']);
 		$type = $row['type'];
-		$typeu = ucwords($row['type']);
-		$category = $row['category'];
+		// $typeu = ucwords($row['type']);
+		// $category = $row['category'];
 		$categoryu = ucwords($row['category']);
 		$code = $row['pCode'];
 		$available =$row['available'];
@@ -46,15 +46,15 @@ if (isset($_POST['updatepro'])) {
 	$price = $_POST['price'];
 	$piece=$_POST['piece'];
 	$available = $_POST['available'];
-	$category = $_POST['category'];
-	$type = $_POST['type'];
+	// $category = $_POST['category'];
+	// $type = $_POST['type'];
 	$item = $_POST['item'];
 	$pCode = $_POST['code'];
 	//triming name
 	$_POST['pname'] = trim($_POST['pname']);
 
-	if($result = mysqli_query($con, "UPDATE products SET pName='$_POST[pname]',price='$_POST[price]',description='$_POST[descri]',available='$_POST[available]',category='$_POST[category]',type='$_POST[type]',item='$_POST[item]',pCode='$_POST[code]' WHERE id='$epid'")){
-		header("Location: editproduct.php?epid=".$epid."");
+	if($result = mysqli_query($con, "UPDATE products SET pName='$_POST[pname]',price='$_POST[price]',description='$_POST[descri]',available='$_POST[available]',item='$_POST[item]',pCode='$_POST[code]' WHERE id='$epid'")){
+		header("Location: report.php?=".$epid."");
 
 	}else {
 		echo "no changed";
@@ -120,7 +120,7 @@ if (isset($_POST['delprod'])) {
 					}
 					else {
 						if(mysqli_query($con, "DELETE FROM products WHERE id='$epid'")){
-						header('location: orders.php');
+						header('location: report.php');
 						}
 					}
 	}

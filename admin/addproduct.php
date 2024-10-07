@@ -169,10 +169,10 @@ $search_value = "";
 
 											<div>
 											<div class="label_content1" style="float: left;">
-  											<h5>Price:</h5>
+  											<h5>Price(Per Unit):</h5>
   											</div>
 												<td >
-												<input name="price" style="margin-left: 180px; id="last_name" required="required" class="last_name signupbox" type="text" size="30" value="'.$price.'" >
+												<input name="price" style="margin-left: 47px; id="last_name" required="required" class="last_name signupbox" type="text" size="30" value="'.$price.'" >
 												</td>
 											</div></br>
 
@@ -180,10 +180,10 @@ $search_value = "";
 
 											<div>
 											<div class="label_content11" style="float: left;">
-  											<h5>Piece(unit):</h5>
+  											<h5>Quantity:</h5>
   											</div>
 											<td >
-											<input name="piece" style="margin-left: 100px; id="piece" required="required" class="piece signupbox" type="text" size="30" value="'.$piece.'" >
+											<input name="piece" style="margin-left: 140px; id="piece" required="required" class="piece signupbox" type="text" size="30" value="'.$piece.'" >
 											</td>
 											</div></br>
 
