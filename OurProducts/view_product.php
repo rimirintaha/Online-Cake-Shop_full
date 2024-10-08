@@ -32,18 +32,7 @@ if (mysqli_num_rows($getposts)) {
 }
 
 
-if (isset($_POST['addcart'])) {
-	$getposts = mysqli_query($con, "SELECT * FROM cart WHERE pid ='$pid' AND uid='$user'") or die(mysqlI_error($con));
-	if (mysqli_num_rows($getposts)) {
-		header('location: ../mycart.php?uid=' . $user . '');
-	} else {
-		if (mysqli_query($con, "INSERT INTO cart (uid,pid,quantity) VALUES ('$user','$pid', 1)")) {
-			header('location: ../mycart.php?uid=' . $user . '');
-		} else {
-			header('location: index.php');
-		}
-	}
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -113,9 +102,7 @@ if (isset($_POST['addcart'])) {
 						<div>
 							<h3 style="padding: 20px 0 5px 0; font-size: 20px;">Want to buy this product? </h3>
 							<div id="srcheader">
-								<form id="" method="post" action="">
-								        <input type="submit" name="addcart" value="Add to cart" class="srcbutton" >
-								</form><br/>
+								
 								<form id="" method="post" action="../orderform.php?poid=' . $pid . '">
 								        <input type="submit" value="Order Now" class="srcbutton" >
 								</form>

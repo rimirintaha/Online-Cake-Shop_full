@@ -10,29 +10,25 @@ if (!isset($_SESSION['user_login'])) {
 	$result = mysqli_query($con, "SELECT * FROM user WHERE id='$user'");
 	$get_user_email = mysqli_fetch_assoc($result);
 	$uname_db = $get_user_email['firstName'];
+
 	$uemail_db = $get_user_email['email'];
 	$upass = $get_user_email['password'];
-
 	$umob_db = $get_user_email['mobile'];
 	$uadd_db = $get_user_email['address'];
 }
 
-if (isset($_REQUEST['uid'])) {
-
-	$user2 = mysqli_real_escape_string($con, $_REQUEST['uid']);
-	if ($user != $user2) {
-		header('location: index.php');
-	}
-} else {
-	header('location: index.php');
-}
-
 if (isset($_POST['changesettings'])) {
 	//declere veriable
+	$fname = $_POST['firstName'];
+	$lname = $_POST['lastName'];
 	$email = $_POST['email'];
+	$lname = $_POST['mobile'];
 	$opass = $_POST['opass'];
 	$npass = $_POST['npass'];
 	$npass1 = $_POST['npass1'];
+
+
+	
 	//triming name
 	try {
 		if (empty($_POST['email'])) {
@@ -115,7 +111,7 @@ if (isset($_POST['changesettings'])) {
 			<div class="uiloginbutton signinButton loginButton" style="">
 				<?php
 				if ($user != "") {
-					echo '<a style="text-decoration: none; color: #fff;" href="profile.php?uid=' . $user . '">Hi ' . $uname_db . '</a>';
+					echo '<a style="text-decoration: none; color: #fff;" href="index.php"> Hello ' . $uname_db . '</a>';
 				} else {
 					echo '<a style="text-decoration: none; color: #fff;" href="login.php">LOG IN</a>';
 				}
@@ -132,15 +128,14 @@ if (isset($_POST['changesettings'])) {
 	<div class="categolis">
 		<table>
 			<tr>
-				<th><?php echo '<a href="mycart.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #fff;border-radius: 12px;">My Cart</a>'; ?>
-				</th>
+				
 				<th>
-					<?php echo '<a href="profile.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #fff;border-radius: 12px;">My Orders</a>'; ?>
+					<?php echo '<a href="my_order.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #fff;border-radius: 12px;">My Orders</a>'; ?>
 				</th>
 				<th>
 					<?php echo '<a href="my_delivery.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #fff;border-radius: 12px;">MyDeliveryHistory</a>'; ?>
 				</th>
-				<th><?php echo '<a href="settings.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #e6b7b8;border-radius: 12px;">Settings</a>'; ?>
+				<th><?php echo '<a href="settings.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #e6b7b8;border-radius: 12px;">Edit Profile</a>'; ?>
 				</th>
 
 
@@ -155,13 +150,33 @@ if (isset($_POST['changesettings'])) {
 					<div class="holecontainer" style=" padding-top: 20px; padding: 0 20%">
 						<form action="" method="POST" class="registration">
 							<div class="container signupform_content ">
+
+
+
 								<div style="font-size: 20px;color:   #1b4f72   ;margin: 0 0 5px 0;">
-									<tr>Change Password:</tr></br>
+									<tr>Edit Profile:</tr></br>
+								</div>
+								<div>
+									<tr>
+									<?php echo '<input style="border: 1px solid  #154360 ;" class="email signupbox" required type="name" name="fname" placeholder="Name" value="' . $uname_db . '">'; ?>
+									</tr></br>
+								</div>
+								
+								<div>
+									<tr>
+									<?php echo '<input style="border: 1px solid  #154360 ;" class="email signupbox" required type="text" name="address" placeholder="Address" value="' . $uadd_db . '">'; ?>
+									</tr></br>
+								</div>
+								<div>
+									<tr>
+									<?php echo '<input style="border: 1px solid  #154360 ;" class="email signupbox" required type="text" name="mobile" placeholder="Mobile" value="' . $umob_db . '">'; ?>
+									</tr></br>
 								</div>
 								<div>
 									<tr><input style="border: 1px solid  #154360 ;" class="email signupbox"
 											type="password" name="opass" placeholder="Old Password"></tr></br>
 								</div>
+
 								<div>
 									<tr><input style="border: 1px solid  #154360 ;" class="email signupbox"
 											type="password" name="npass" placeholder="New Password"></tr></br>
@@ -180,7 +195,7 @@ if (isset($_POST['changesettings'])) {
 								</div>
 								<div>
 									<tr><input style="border: 1px solid  #154360 ;" class="uisignupbutton signupbutton"
-											type="submit" name="changesettings" value="Update Settings"></tr></br>
+											type="submit" name="changesettings" value="Update Profile"></tr></br>
 								</div>
 								<div>
 									<?php if (isset($success_message)) {

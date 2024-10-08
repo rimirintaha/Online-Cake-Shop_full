@@ -16,15 +16,7 @@ if (!isset($_SESSION['user_login'])) {
 	$uadd_db = $get_user_email['address'];
 }
 
-if (isset($_REQUEST['uid'])) {
 
-	$user2 = mysqli_real_escape_string($con, $_REQUEST['uid']);
-	if ($user != $user2) {
-		header('location: index.php');
-	}
-} else {
-	header('location: index.php');
-}
 
 $search_value = "";
 ?>
@@ -54,7 +46,7 @@ $search_value = "";
 			<div class="uiloginbutton signinButton loginButton" style="">
 				<?php
 				if ($user != "") {
-					echo '<a style="text-decoration: none; color: #fff;" href="profile.php?uid=' . $user . '">Hi ' . $uname_db . '</a>';
+					echo '<a style="text-decoration: none; color: #fff;" href="index.php"> Hello ' . $uname_db . '</a>';
 				} else {
 					echo '<a style="text-decoration: none; color: #fff;" href="login.php">LOG IN</a>';
 				}
@@ -78,15 +70,14 @@ $search_value = "";
 	<div class="categolis">
 		<table>
 			<tr>
-				<th><?php echo '<a href="mycart.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #fff;border-radius: 12px;">My Cart</a>'; ?>
-				</th>
+			
 				<th>
-					<?php echo '<a href="profile.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #fff;border-radius: 12px;">My Orders</a>'; ?>
+					<?php echo '<a href="my_order.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #fff;border-radius: 12px;">My Orders</a>'; ?>
 				</th>
 				<th>
 					<?php echo '<a href="my_delivery.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #e6b7b8;border-radius: 12px;">MyDeliveryHistory</a>'; ?>
 				</th>
-				<th><?php echo '<a href="settings.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #fff;border-radius: 12px;">Settings</a>'; ?>
+				<th><?php echo '<a href="settings.php?uid=' . $user . '" style="text-decoration: none;color: #040403;padding: 4px 12px;background-color: #fff;border-radius: 12px;">Edit Profile</a>'; ?>
 				</th>
 
 
