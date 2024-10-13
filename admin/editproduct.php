@@ -32,10 +32,6 @@ $getposts = mysqli_query($con, "SELECT * FROM products WHERE id ='$epid'") or di
 		$picture = $row['picture'];
 		$item = $row['item'];
 		$itemu = ucwords($row['item']);
-		$type = $row['type'];
-		// $typeu = ucwords($row['type']);
-		// $category = $row['category'];
-		$categoryu = ucwords($row['category']);
 		$code = $row['pCode'];
 		$available =$row['available'];
 	}	
@@ -46,8 +42,6 @@ if (isset($_POST['updatepro'])) {
 	$price = $_POST['price'];
 	$piece=$_POST['piece'];
 	$available = $_POST['available'];
-	// $category = $_POST['category'];
-	// $type = $_POST['type'];
 	$item = $_POST['item'];
 	$pCode = $_POST['code'];
 	//triming name
@@ -136,7 +130,7 @@ $search_value = "";
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body style="background-image: url(../image/homebackgrndimg1.jfif);">
+<body style="background-image: url(../image/homebackgrndimg1.jpg);">
 	<div class="homepageheader">
 			<div class="signinButton loginButton">
 				<div class="uiloginbutton signinButton loginButton" style="margin-right: 40px;">

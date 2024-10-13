@@ -47,7 +47,7 @@ if (!isset($_SESSION['user_login'])) {
 			<div class="uiloginbutton signinButton loginButton" style="">
 				<?php
 				if ($user != "") {
-					echo '<a style="text-decoration: none; color: #fff;" href="user_profile.php?uid=' . $user . '">Hi ' . $uname_db . '</a>';
+					echo '<a style="text-decoration: none; color: #fff;" href="user_profile.php?uid=' . $user . '">HELLO ' . $uname_db . '</a>';
 				} else {
 					echo '<a style="text-decoration: none; color: #fff;" href="login.php">LOG IN</a>';
 				}

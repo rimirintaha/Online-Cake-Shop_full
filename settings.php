@@ -95,7 +95,7 @@ if (isset($_POST['changesettings'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body style="background-image: url(image/homebackgrndimgSetting1.jfif);">
+<body style="background-image: url(image/homebackgrndimg1.jpg);">
 	<div class="homepageheader">
 		<div class="signinButton loginButton">
 			<div class="uiloginbutton signinButton loginButton" style="margin-right: 40px;">
@@ -111,7 +111,7 @@ if (isset($_POST['changesettings'])) {
 			<div class="uiloginbutton signinButton loginButton" style="">
 				<?php
 				if ($user != "") {
-					echo '<a style="text-decoration: none; color: #fff;" href="index.php"> Hello ' . $uname_db . '</a>';
+					echo '<a style="text-decoration: none; color: #fff;" href="user_profile.php"> Hello ' . $uname_db . '</a>';
 				} else {
 					echo '<a style="text-decoration: none; color: #fff;" href="login.php">LOG IN</a>';
 				}

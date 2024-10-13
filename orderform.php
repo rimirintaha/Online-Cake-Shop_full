@@ -136,7 +136,7 @@ if (isset($_POST['order'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body style="background-image: url(image/homebackgrndimg1.jfif);">
+<body style="background-image: url(image/homebackgrndimg1.jpg);">
 	<div class="homepageheader">
 		<div class="signinButton loginButton">
 			<div class="uiloginbutton signinButton loginButton" style="margin-right: 40px;">
@@ -230,22 +230,22 @@ if (isset($_POST['order'])) {
 						$umob_db = $get_user_email['mobile'];
 						$uadd_db = $get_user_email['address'];
 						echo '<h3 style="color:black;font-size:25px;"> First Name: </h3>';
-						echo '<span style="color:#34ce6c;font-size:25px;">' . $uname_db . '</span>';
+						echo '<span style="color:#DE3163;font-size:25px;">' . $uname_db . '</span>';
 						echo '<h3 style="color:black;font-size:25px;"> Last Name: </h3>';
-						echo '<span style="color:#34ce6c;font-size:25px;">' . $ulast_db . '</span>';
+						echo '<span style="color:#DE3163;font-size:25px;">' . $ulast_db . '</span>';
 						echo '<h3 style="color:black;font-size:25px;"> Email: </h3>';
-						echo '<span style="color:#34ce6c;font-size:25px;">' . $uemail_db . '</span>';
+						echo '<span style="color:#DE3163;font-size:25px;">' . $uemail_db . '</span>';
 						echo '<h3 style="color:black;font-size:25px;"> Contact Number: </h3>';
-						echo '<span style="color:#34ce6c;font-size:25px;">' . $umob_db . '</span>';
+						echo '<span style="color:#DE3163;font-size:25px;">' . $umob_db . '</span>';
 						echo '<h3 style="color:black;font-size:25px;"> Home Address: </h3>';
-						echo '<span style="color:#34ce6c;font-size:25px;">' . $uadd_db . '</span>';
+						echo '<span style="color:#DE3163;font-size:25px;">' . $uadd_db . '</span>';
 
 						$del = $_POST['Delivery'];
 						echo '<h3 style="color:black;font-size:25px;">Types of Delivery:</h3>';
-						echo '<span style="color:#34ce6c;font-size:25px;">' . $del . '</span>';
+						echo '<span style="color:#DE3163;font-size:25px;">' . $del . '</span>';
 						$quan = $_POST['Quantity'];
 						echo '<h3 style="color:black;font-size:25px;"> Quantity: </h3>';
-						echo '<span style="color:#34ce6c;font-size:25px;">' . $quan . '</span>';
+						echo '<span style="color:#DE3163;font-size:25px;">' . $quan . '</span>';
 
 						echo '<h3 style="color:#169E8F;font-size:45px;"> Total: TK ' . $quan * $price . ' TK</h2>';
 

@@ -44,7 +44,8 @@ if (mysqli_num_rows($getposts)) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body style="background-image: url(../image/homebackgrndimg1.jpg);">
+	<div class="homepageheader">
 	<?php include("../inc/mainheader.inc.php"); ?>
 	<div class="categolis">
 		<table>

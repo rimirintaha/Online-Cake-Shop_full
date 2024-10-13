@@ -46,7 +46,7 @@ $search_value = "";
 			<div class="uiloginbutton signinButton loginButton" style="">
 				<?php
 				if ($user != "") {
-					echo '<a style="text-decoration: none; color: #fff;" href="index.php"> Hello ' . $uname_db . '</a>';
+					echo '<a style="text-decoration: none; color: #fff;" href="user_profile.php"> Hello ' . $uname_db . '</a>';
 				} else {
 					echo '<a style="text-decoration: none; color: #fff;" href="login.php">LOG IN</a>';
 				}
