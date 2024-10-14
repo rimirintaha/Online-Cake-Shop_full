@@ -135,7 +135,7 @@ if (isset($_POST['signup'])) {
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body class="home-welcome-text" style="background-image: url(image/homebackgrndimg2.jpg);">
+<body class="home-welcome-text" style="background-image: url(image/homebackgrndimg1.jpg);">
 	<div class="homepageheader" style="position: inherit;">
 		<div class="signinButton loginButton">
 			<div class="uiloginbutton signinButton loginButton" style="margin-right: 40px;">
