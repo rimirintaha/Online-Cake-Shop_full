@@ -16,21 +16,21 @@ $u_pass = "";
 
 if (isset($_POST['signup'])) {
 	//declere veriable
-	$u_fname = $_POST['first_name'];
+	$u_fname = $_POST['first_name*'];
 	$u_lname = $_POST['last_name'];
 	$u_email = $_POST['email'];
 	$u_mobile = $_POST['mobile'];
 	$u_address = $_POST['signupaddress'];
 	$u_pass = $_POST['password'];
 	//triming name
-	$_POST['first_name'] = trim($_POST['first_name']);
+	$_POST['first_name*'] = trim($_POST['first_name*']);
 	$_POST['last_name'] = trim($_POST['last_name']);
 	try {
-		if (empty($_POST['first_name'])) {
+		if (empty($_POST['first_name*'])) {
 			throw new Exception('Fullname can not be empty');
 
 		}
-		if (is_numeric($_POST['first_name'][0])) {
+		if (is_numeric($_POST['first_name*'][0])) {
 			throw new Exception('Please write your correct name!');
 
 		}
@@ -70,7 +70,7 @@ if (isset($_POST['signup'])) {
 					if ($email_check == 0) {
 						if (strlen($_POST['password']) > 1) {
 							$d = date("Y-m-d"); //Year - Month - Day
-							$_POST['first_name'] = ucwords($_POST['first_name']);
+							$_POST['first_name*'] = ucwords($_POST['first_name*']);
 							$_POST['last_name'] = ucwords($_POST['last_name']);
 							$_POST['last_name'] = ucwords($_POST['last_name']);
 							$_POST['email'] = mb_convert_case($u_email, MB_CASE_LOWER, "UTF-8");
@@ -88,7 +88,7 @@ if (isset($_POST['signup'])) {
 							$form = "From: rubelduet124019@gmail.com";
 							if (mail($_POST['email'], $subject, $msg, $form)) {
 
-								$result = mysqli_query($con, "INSERT INTO user (firstName,lastName,email,mobile,address,password,confirmCode) VALUES ('$_POST[first_name]','$_POST[last_name]','$_POST[email]','$_POST[mobile]','$_POST[signupaddress]','$_POST[password]','$confirmCode')");
+								$result = mysqli_query($con, "INSERT INTO user (firstName*,lastName,email,mobile,address,password,confirmCode) VALUES ('$_POST[first_name]','$_POST[last_name]','$_POST[email]','$_POST[mobile]','$_POST[signupaddress]','$_POST[password]','$confirmCode')");
 
 								//success message
 								$success_message = '
@@ -168,7 +168,7 @@ if (isset($_POST['signup'])) {
 												<div class="signup_form">
 													<div>
 														<td >
-															<input name="first_name" id="first_name" placeholder="First Name" required="required" class="first_name signupbox" type="text" size="30" value="' . $u_fname . '" >
+															<input name="first_name*" id="first_name*" placeholder="First Name*" required="required" class="first_name* signupbox" type="text" size="30" value="' . $u_fname . '" >
 														</td>
 													</div>
 													<div>
